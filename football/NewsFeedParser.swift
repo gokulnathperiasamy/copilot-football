@@ -32,7 +32,7 @@ class NewsFeedParser: ObservableObject {
                                     title: item.title ?? "No Title",
                                     link: item.link ?? "",
                                     source: self.getSource(from: url),
-                                    time: item.pubDate?.description ?? "2025-04-03T16:16:30Z", // Placeholder value for demo
+                                    time: (item.pubDate?.ISO8601Format())!, //?.description ?? "2025-04-03T16:16:30Z", // Placeholder value for demo
                                     content: item.description ?? "No content available."
                                 )
                             }
@@ -52,9 +52,9 @@ class NewsFeedParser: ObservableObject {
     }
 
     private func getSource(from url: String) -> String {
-        if url.contains("bbc.co.uk") {
+        if url.contains("bbc") {
             return "BBC"
-        } else if url.contains("theguardian.com") {
+        } else if url.contains("theguardian") {
             return "Guardian"
         } else {
             return "Sky Sports"

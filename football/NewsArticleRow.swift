@@ -10,27 +10,29 @@ struct NewsArticleRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(article.title)
                     .font(.headline)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .lineLimit(2)
                 Text(article.content.removingHTMLElements())
                     .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .lineLimit(3)
+                    .foregroundColor(Color.white.opacity(0.8))
+                    .lineLimit(4)
+                    .padding(.bottom, 12)
+                
                 HStack {
                     Text(article.time.toFormattedDate())
                         .font(.caption)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color.white.opacity(0.8))
                     Spacer()
                     Text(article.source)
                         .font(.caption)
                         .padding(4)
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(4)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.white.opacity(0.8))
                 }
             }
         }
-        .padding(1)
+        .padding(8)
         .background(Color.gray.opacity(0.1))
         .cornerRadius(4)
         .padding(.horizontal, 1)

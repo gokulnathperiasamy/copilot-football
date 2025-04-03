@@ -7,7 +7,7 @@ struct NewsArticleDetailView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(article.title)
                 .font(.largeTitle)
-                .padding(.bottom, 10)
+                .padding(.bottom, 4)
             
             Text(article.time.toFormattedDate())
                 .font(.subheadline)
